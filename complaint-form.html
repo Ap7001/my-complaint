@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शिकायत फॉर्म</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>शिकायत फॉर्म</h1>
+        <form id="complaintForm">
+            <label for="name">पूरा नाम:</label>
+            <input type="text" id="name" name="name" required placeholder="अपना नाम दर्ज करें">
+            
+            <label for="village">गांव/शहर का नाम:</label>
+            <input type="text" id="village" name="village" required placeholder="गांव या शहर का नाम दर्ज करें">
+            
+            <label for="contact">संपर्क नंबर:</label>
+            <input type="tel" id="contact" name="contact" required placeholder="अपना मोबाइल नंबर दर्ज करें">
+            
+            <label for="complaintType">शिकायत का प्रकार:</label>
+            <select id="complaintType" name="complaintType" required>
+                <option value="" disabled selected>चुनें...</option>
+                <option value="electricity">बिजली समस्या</option>
+                <option value="water">पानी की समस्या</option>
+                <option value="road">सड़क की समस्या</option>
+                <option value="health">स्वास्थ्य समस्या</option>
+                <option value="police">पुलिस/कानून व्यवस्था</option>
+                <option value="other">अन्य</option>
+            </select>
+            
+            <label for="description">शिकायत का विवरण:</label>
+            <textarea id="description" name="description" rows="5" required placeholder="अपनी समस्या का विवरण लिखें"></textarea>
+            
+            <button type="submit">सबमिट करें</button>
+        </form>
+    </div>
+
+    <script>
+        // Form submission handling
+        document.getElementById('complaintForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert("आपकी शिकायत सफलतापूर्वक सबमिट हो गई है। धन्यवाद!");
+        });
+    </script>
+</body>
+</html>
